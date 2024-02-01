@@ -7,7 +7,7 @@ user name https://t.me/Prosto_priemka_bot
 
 
 <div align="center">
-  <img src="https://media.giphy.com/media/gCeh1KDeDaxGu8no4A/giphy.gif" width="500"/>
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdXZ5c2FnaXpqOXY1cTdidGZsZjF6b3duaDBjbXdpMnR0ZG9pamlvMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ya4eevXU490Iw/giphy.gif" width="200"/>
 </div>
 
 ---
@@ -18,7 +18,16 @@ The bot greets the user and offers to choose how the user will accept the apartm
 ### Demonstration
 <div align="center">
   <img src="https://postimg.cc/H80qXSC1" width="600"/>
-  <img src="https://postimg.cc/GT0BHpbS" width="600"/>
-  <img src="https://postimg.cc/QHK3fqk5" width="600"/>
-  <img src="https://postimg.cc/5YDPy8Yd" width="700"/>
 </div>
+<div align="center">
+  <img src="https://postimg.cc/GT0BHpbS" width="600"/>
+</div>
+<div align="center">
+  <img src="https://postimg.cc/QHK3fqk5" width="600"/>
+</div>
+<div align="center">
+  <img src="https://postimg.cc/5YDPy8Yd" width="600"/>
+</div>
+
+
+
