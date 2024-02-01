@@ -2,8 +2,8 @@
 # Telegram Bot for "prostopriemka.ru"
 
 ### About
-Telegram Bot for "prostopriemka.ru", that will help to accept the apartment from the developer.
-user name https://t.me/Prosto_priemka_bot
+Telegram Bot for "prostopriemka.ru", that will help to accept the apartment from the developer.  
+User name https://t.me/Prosto_priemka_bot
 
 
 <div align="center">
@@ -17,16 +17,16 @@ The bot greets the user and offers to choose how the user will accept the apartm
 
 ### Demonstration
 <div align="center">
-  <img src="https://postimg.cc/H80qXSC1" width="600"/>
+  <img src="https://i.postimg.cc/Rh2vr8sh/greetings.jpg" width="400"/>
 </div>
 <div align="center">
-  <img src="https://postimg.cc/GT0BHpbS" width="600"/>
+  <img src="https://i.postimg.cc/cCCfkK2Z/himself.jpg" width="600"/>
 </div>
 <div align="center">
-  <img src="https://postimg.cc/QHK3fqk5" width="600"/>
+  <img src="https://i.postimg.cc/nc0hcRXd/himself2.jpg" width="600"/>
 </div>
 <div align="center">
-  <img src="https://postimg.cc/5YDPy8Yd" width="600"/>
+  <img src="https://i.postimg.cc/zvG4djqB/specialist.jpg" width="600"/>
 </div>
 
 
