@@ -1,8 +1,9 @@
 
-# Telegram Bot for "Prostopriemka"
+# Telegram Bot for "ProstoPriemka"
 
 ### About
-Telegram Bot for "Prostopriemka", that will help to accept the apartment from the developer.  
+Telegram Bot for for the company "ProstoPriemka", providing the apartment acceptance services.  
+Bot will help to accept the apartment from the developer.  
 User name https://t.me/Prosto_priemka_bot
 
 
@@ -37,7 +38,7 @@ The bot greets the user and offers to choose how the user will accept the apartm
 
 ---
 
-#### Developed for https://prostopriemka.ru/
+Developed for https://prostopriemka.ru/
 
 
 
