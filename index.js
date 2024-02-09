@@ -5,29 +5,27 @@ import  { btn_floor_1_links } from './src/content/btn_contetnt.js';
 import * as dotenv from 'dotenv';
 dotenv.config();
 const bot = new Telegraf(process.env.BOT_TOKEN);
-import addActionBot from './src/addActionBot.js';
-// import getContentBtn from './src/getContentBtn.js';
-
 
 bot.help((ctx) => ctx.reply(content.commands))
 bot.start((ctx) => ctx.replyWithHTML(`Привет, ${ctx.message.from.first_name ? ctx.message.from.first_name : 'пользователь'}!
 <b>Выбери, что делаем?</b>`, content.buttonContentsStart))
-bot.on(message('sticker'), (ctx) => ctx.reply('👍'))
-bot.on(message('text' && !'reserve'), (ctx) => ctx.reply('❓ Не понимаю тебя. \nBыбери, что делать:', content.buttonContentsStart))
 bot.command('reserve', async (ctx) => {
-try {
-    await ctx.replyWithHTML('<b>Записаться на приёмку</b> квартиры, дома, ремота или тепловизионный осмотр:', content.communicationChannels)
-    } catch (e) {
-        ctx.reply(content.errorMessage)
-    }
-})
+    try {
+        await ctx.replyWithHTML('<b>Записаться на приёмку</b> квартиры, дома, ремота или тепловизионный осмотр:', content.communicationChannels)
+        } catch (e) {
+            ctx.reply(content.errorMessage)
+        }
+    })
+    
+bot.on(message('text'), (ctx) => ctx.reply('Не понимаю тебя. \nBыбери, что делать:', content.buttonContentsStart))
+bot.on(message('sticker'), (ctx) => ctx.reply('👍'))
 
 // Обработка самостоятельной приемки
     bot.action('independ', async(ctx) => {
         try {
         await ctx.answerCbQuery() //убрать часы с кнопки
         await ctx.replyWithHTML('<b>Выбери раздел/конструкцию:</b>', Markup.inlineKeyboard([
-            [Markup.button.callback('Пол', 'content.btn_floor')],
+            [Markup.button.callback('Пол', 'btn_floor')],
             [Markup.button.callback('Стены', 'btn_walls')],
             [Markup.button.callback('Потолок', 'btn_ceiling')],
             [Markup.button.callback('Водоснабжение, канализация, отопление', 'btn_water')],
@@ -67,29 +65,38 @@ try {
     }
 })
 
-// const backFloor = Markup.inlineKeyboard([
-//     Markup.button.callback('↩ вернуться в раздел', 'btn_floor'), Markup.button.callback('➡ далее', 'independ')]);
+const getActionBot = (name, src, content1) => {
+    bot.action(name, async(ctx) => {
+        try {
+        await ctx.answerCbQuery() //убрать часы с кнопки
+        if (src !== false) {
+            await ctx.replyWithPhoto({source: src})
+        }
+        await ctx.replyWithHTML(content1, { disable_web_page_preview: true }) // не будет изображения превью ссылки
+    } catch (e) {
+        ctx.reply(content.errorMessage)
+    }
+    })
+};
 
-
-const getContentBtn = (name, backFloor, content) => {
+const getContentBtn = (name, mediaContent, back) => {
 	bot.action(name, async(ctx) => {
     try {
     await ctx.answerCbQuery(); 
-    await ctx.replyWithMediaGroup(content)
-    await ctx.replyWithHTML('<b>Выбери, что делаем:</b>', backFloor)
+    await ctx.replyWithMediaGroup(mediaContent)
+    await ctx.replyWithHTML('<b>Выбери, что делаем:</b>', back)
 } catch (e) {
     ctx.reply(content.errorMessage)
-}
-})
+}})
 };
 
 
-addActionBot('independ', './images/about.JPG', content.communicationChannels)
-addActionBot('contacts', false, content.communicationChannels)
-addActionBot('phone', false, content.phoneNumber)
-addActionBot('WatsApp', false, content.WatsApp)
-addActionBot('btn_floor', false, content.btn_floor_1)
-getContentBtn('content.btn_floor_1', content.backFloor, btn_floor_1_links)
+getActionBot('independ', false, content.communicationChannels)
+getActionBot('contacts', false, content.communicationChannels)
+getActionBot('phone',false, content.phoneNumber)
+getActionBot('messenger',false, content.WatsApp)
+getActionBot('btn_floor', false, content.btn_floor_1)
+getContentBtn('btn_floor_1', btn_floor_1_links, content.backFloor)
 
 bot.launch()
 
